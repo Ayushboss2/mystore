@@ -1,0 +1,8 @@
+type Store @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  ProductName: String
+  ProductInfo: String
+  Rating: Float!
+  Image: String
+}
+ 

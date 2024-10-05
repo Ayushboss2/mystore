@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+//import React, { useState } from 'react'; // Import useState from React
+import {
+  ActionCardCollection,
+  NavBarHeader,
+  MarketingFooterBrand,
+  AddProduct
+} from './ui-components';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [showForm , setshowForm] =useState(false);
+  const navOverrides = {
+    "Dashboard": {
+      style: {
+        cursor:"pointer"
+      },
+      onClick: () => alert("You Are On Dashboard ."),
+    },
+    "Add Product": {
+      style: {
+        cursor:"pointer"
+      },
+      onClick: () => setshowForm(!showForm),
+    },
+    "Free": {
+      style: {
+        cursor:"pointer"
+      },
+      onClick: () => alert("Free Products Dashboard."),
+    }
+  };
+return (
+  <div className="App">
+    <NavBarHeader width={"100%"} overrides={navOverrides} />
+    <header className="App-header">
+      {
+        showForm &&  ( <AddProduct
+          style={{
+            textAlign:'left',
+            margin:'2rem',
+          }} />)
+      }
+      {
+        !showForm && (<ActionCardCollection />)
+      }
+    </header>
+    <MarketingFooterBrand width={"100%"} />
+  </div>
+);
 }
 
 export default App;
