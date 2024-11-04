@@ -1,3 +1,5 @@
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+serviceWorkerRegistration.register();
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
