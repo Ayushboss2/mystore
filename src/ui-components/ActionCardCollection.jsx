@@ -82,7 +82,7 @@ export default function ActionCardCollection(props) {
       <Collection
         type="grid"
         searchPlaceholder="Search..."
-        templateColumns="1fr 1fr 1fr 1fr 1fr"
+        templateColumns="1fr 1fr"
         autoFlow="row"
         alignItems="stretch"
         justifyContent="stretch"
@@ -101,7 +101,7 @@ export default function ActionCardCollection(props) {
               store={item}
               height="auto"
               width="auto"
-              margin="2em 2em 2em 2em"
+              margin="1em 1em 1em 1em"
               key={item.id}
               {...(overrideItems && overrideItems({ item, index }))}
             ></ActionCard>
